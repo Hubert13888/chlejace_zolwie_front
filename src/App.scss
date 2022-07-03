@@ -1,0 +1,9 @@
+.App {
+    background-color: blue;
+    header {
+        color: green;
+        &>p {
+            background-color: red;
+        }
+    }
+}
