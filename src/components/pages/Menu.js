@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { TextField } from '@mui/material'
 import './Menu.scss';
 import { Button } from '@mui/material';
-import joinGameRequest from "../../requests/joinGame"
+import {joinGameRequest, joinGameRequestNC} from "../../requests/joinGame"
 
 const App = () => {
   const [X, setX] = useState(0)
@@ -26,7 +26,10 @@ const App = () => {
             <TextField id="outlined-basic" label="Z" variant="outlined" name="Z" onChange={e => setZ(e.target.value)}/>
           </Grid>
           <Grid item xs={8}>
-            <Button variant="outlined" onClick={() => joinGameRequest(X, Y, Z)}>Połącz z grą</Button>
+            <Button variant="outlined" onClick={() => joinGameRequest(X, Y, Z)}>Połącz z grą (Z cookies)</Button>
+          </Grid>
+          <Grid item xs={8}>
+            <Button variant="outlined" onClick={() => joinGameRequestNC(X, Y, Z)}>Połącz z grą (Bez Cookies)</Button>
           </Grid>
         </Grid>      
       </Container>
