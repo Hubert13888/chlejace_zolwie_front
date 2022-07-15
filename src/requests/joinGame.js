@@ -5,6 +5,7 @@ const joinGameRequest = async (X, Y, Z) => {
     try {
         response = await fetch(`${VARS.serverURL}/join_game`, {
             method: "POST",
+            credentials: 'include',
             mode: "cors",
             body: JSON.stringify({X, Y, Z})
         })
