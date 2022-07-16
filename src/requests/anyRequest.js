@@ -6,6 +6,10 @@ const anyRequest = async (method, endpoint, body, extraProps = {}, noCredentials
             method,
             credentials: noCredentials ? undefined : 'include',
             mode: 'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
             body: (() => {
                 if(method === 'GET' || !body) return undefined
                 if(stringify) return JSON.stringify(body)
