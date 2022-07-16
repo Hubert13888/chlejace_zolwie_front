@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './index.css';
 import Menu from './components/pages/Menu';
+import Playground from './components/pages/Playground';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Menu />
+    <Router>
+      <Routes>
+        <Route path="playground" element={<Playground/>}/>
+        <Route path="/" element={<Menu/>}/>
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
