@@ -44,7 +44,31 @@ const Menu = () => {
 
     return (
     <FadeOutAnimationHandler>
-        menu
+        <div>
+            <div>
+                <p>Połącz z grą</p>
+            </div>
+            <div>
+                <input value={X} onChange={e => setX(e.target.value)}/>
+            </div>
+            <div>
+                <input value={Y} onChange={e => setY(e.target.value)}/>
+            </div>
+            <div>
+                <input value={Z} onChange={e => setZ(e.target.value)}/>
+            </div>
+            <div>
+                <button onClick={() => handleJoinGameButton(X, Y, Z)}>Połącz z grą</button>
+            </div>
+            <div>
+                <Link to="/playground">
+                    <button>Playground</button>
+                </Link>
+            </div>
+        </div>
+        <div>
+            Stoły
+        </div>
         {/*
             <Grid container sx={{minHeight: "100vh"}}>
                 <Grid container md={6}>

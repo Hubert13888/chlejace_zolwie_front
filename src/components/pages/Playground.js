@@ -18,7 +18,32 @@ const Playground = () => {
 
   return (
     <FadeOutAnimationHandler>
-      playground
+      <div>
+        <div>
+          <input value={method} onChange={e => {
+            setMethod(e.target.value)
+            localStorage.setItem("test_method", e.target.value)
+          }}/>
+        </div>
+        <div>
+          <input value={endpoint} onChange={e => {
+            setEndpoint(e.target.value)
+            localStorage.setItem("test_endpoint", e.target.value)
+          }}/>
+        </div>
+        <div>
+          <input value={body} onChange={e => {
+            setBody(e.target.value)
+            localStorage.setItem("test_body", e.target.value)
+          }}/>
+        </div>
+        <div>
+          <button onClick={() => anyRequest(method, endpoint, {body: JSON.parse(body)})}>Wyślij (z cookies)</button>
+        </div>
+        <div>
+          <button onClick={() => anyRequest(method, endpoint, {body: JSON.parse(body), noCredentials: true})}>Wyślij (bez cookies)</button>
+        </div>
+      </div>
       {/*<Container sx={{
         marginY: 4
       }}>
