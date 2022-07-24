@@ -1,6 +1,6 @@
 import VARS from "../clientData.js"
 
-const anyRequest = async (method, endpoint, body, extraProps = {}, noCredentials = false, stringify = true) => {
+const anyRequest = async (method, endpoint, {body, extraProps = {}, noCredentials = false, stringify = true, noResponse = false}) => {
     return new Promise((resolve, reject) => {
         fetch(`${VARS.serverURL}${endpoint}`, {
             method,
@@ -17,7 +17,12 @@ const anyRequest = async (method, endpoint, body, extraProps = {}, noCredentials
             })(),
             ...extraProps
         })
-        .then(response => response.json())
+        .then(response => {
+            if(noResponse) {
+                return resolve()
+            }
+            return response.json()
+        })
         .then(data => resolve(data))
         .catch(err => reject(err))
     })

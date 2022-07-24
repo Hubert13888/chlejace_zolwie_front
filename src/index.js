@@ -2,20 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './index.css';
-import Menu from './components/pages/Menu';
-import Playground from './components/pages/Playground';
+import IndexAnimation from "./IndexAnimation"
 import reportWebVitals from './reportWebVitals';
+import ContextManagers from "./components/templates/ContextHandler"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <ContextManagers>
     <Router>
-      <Routes>
-        <Route path="playground" element={<Playground/>}/>
-        <Route path="/" element={<Menu/>}/>
-      </Routes>
+        <IndexAnimation></IndexAnimation>
     </Router>
-  </React.StrictMode>
+  </ContextManagers>
 );
 
 // If you want to start measuring performance in your app, pass a function

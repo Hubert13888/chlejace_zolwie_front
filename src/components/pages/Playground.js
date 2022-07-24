@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { TextField, Button } from '@mui/material'
 import './Menu.scss';
 import anyRequest from "../../requests/anyRequest"
+import { motion } from "framer-motion"
+import FadeOutAnimationHandler from "../templates/FadeOutAnimationHandler"
 
 const Playground = () => {
   let methodStorage = localStorage.getItem("test_method"),
@@ -13,8 +15,10 @@ const Playground = () => {
   const [method, setMethod] = useState(methodStorage || "POST")
   const [endpoint, setEndpoint] = useState(endpointStorage || "/join_game")
   const [body, setBody] = useState(bodyStorage || `{"X": 4, "Y": 5, "Z": 6}`)
+
+
   return (
-    <>
+    <FadeOutAnimationHandler>
       <Container sx={{
         marginY: 4
       }}>
@@ -38,14 +42,14 @@ const Playground = () => {
               }}/>
           </Grid>
           <Grid item xs={8}>
-            <Button variant="outlined" onClick={() => anyRequest(method, endpoint, JSON.parse(body))}>Wyślij (Z cookies)</Button>
+            <Button variant="outlined" onClick={() => anyRequest(method, endpoint, {body: JSON.parse(body)})}>Wyślij (Z cookies)</Button>
           </Grid>
           <Grid item xs={8}>
-            <Button variant="outlined" onClick={() => anyRequest(method, endpoint, JSON.parse(body), {}, true)}>Wyślij (Bez Cookies)</Button>
+            <Button variant="outlined" onClick={() => anyRequest(method, endpoint, {body: JSON.parse(body), noCredentials: true})}>Wyślij (Bez Cookies)</Button>
           </Grid>
         </Grid>      
       </Container>
-    </>
+    </FadeOutAnimationHandler>
   );
 }
 
