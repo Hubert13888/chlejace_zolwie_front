@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { TextField, Button } from '@mui/material'
 import './Menu.scss';
 import anyRequest from "../../requests/anyRequest"
-import { motion } from "framer-motion"
 import FadeOutAnimationHandler from "../templates/FadeOutAnimationHandler"
 
 const Playground = () => {

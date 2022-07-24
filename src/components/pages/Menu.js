@@ -2,14 +2,12 @@ import { useState, useContext, useEffect } from 'react';
 import {Link, useNavigate, useLocation} from "react-router-dom"
 import { GeneralDataContext } from "../organisms/Contexts"
 
-import { Container } from '@mui/system';
-import { Grid, Box } from '@mui/material';
+import { Grid } from '@mui/material';
 import { TextField, Button, Typography } from '@mui/material'
 
 import {joinGameRequest} from "../../requests/joinGame"
 import FadeOutAnimationHandler from "../templates/FadeOutAnimationHandler"
 import ErrorHandler from "../templates/ErrorHandler";
-import {CenterBox, GameGrid} from "../organisms/ContentPosition"
 
 import './Menu.scss';
 
