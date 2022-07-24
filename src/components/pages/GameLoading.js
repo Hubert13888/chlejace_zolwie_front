@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { GeneralDataContext } from "../organisms/Contexts"
 
-import {Grid, CircularProgress} from "@mui/material"
+import {Grid} from "@mui/material"
 
 import { iAmOnline } from "../../requests/iAmOnline"
 import { areTheyOnline } from "../../requests/areTheyOnline"
@@ -54,7 +54,7 @@ const GameLoading = props => {
         ) :
             <Grid container sx={{minHeight: "100vh", minWidth: "100vw"}} alignItems="center" justifyContent="center">
                 <Grid item xl={12}>
-                    <CircularProgress/>
+                    <p>Loading</p>
                 </Grid>
             </Grid>
         }
