@@ -2,7 +2,7 @@ import anyRequest from "./anyRequest";
 
 const areTheyOnline = () => {
     return new Promise((resolve, reject) => {
-        anyRequest("POST", "/are_they_online").then(
+        anyRequest("GET", "/are_they_online", {}).then(
             response => {
                 if(response?.status) {
                     return reject([response.status, response.error, response.path])
@@ -10,6 +10,7 @@ const areTheyOnline = () => {
                 resolve()
             },
             err => {
+                console.log(err)
                 reject(["ARE_THEY_ONLINE", "WRONG_FETCH_SYNTAX", err])
             }
         )
