@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { GeneralDataContext } from "../organisms/Contexts"
 
-import {Grid} from "@mui/material"
+//import {Grid} from "@mui/material"
 
 import { iAmOnline } from "../../requests/iAmOnline"
 import { areTheyOnline } from "../../requests/areTheyOnline"
@@ -51,12 +51,12 @@ const GameLoading = props => {
     return <>
         {isUnset(generalData.clientId) ? (
             <Navigate to="/" replace={true}/>
-        ) :
-            <Grid container sx={{minHeight: "100vh", minWidth: "100vw"}} alignItems="center" justifyContent="center">
+        ) : <>game loading</>
+            /*<Grid container sx={{minHeight: "100vh", minWidth: "100vw"}} alignItems="center" justifyContent="center">
                 <Grid item xl={12}>
                     <p>Loading</p>
                 </Grid>
-            </Grid>
+            </Grid>*/
         }
     </>
 }

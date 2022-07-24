@@ -2,8 +2,8 @@ import { useState, useContext, useEffect } from 'react';
 import {Link, useNavigate, useLocation} from "react-router-dom"
 import { GeneralDataContext } from "../organisms/Contexts"
 
-import { Grid } from '@mui/material';
-import { TextField, Button, Typography } from '@mui/material'
+//import { Grid } from '@mui/material';
+//import { TextField, Button, Typography } from '@mui/material'
 
 import {joinGameRequest} from "../../requests/joinGame"
 import FadeOutAnimationHandler from "../templates/FadeOutAnimationHandler"
@@ -44,6 +44,8 @@ const Menu = () => {
 
     return (
     <FadeOutAnimationHandler>
+        menu
+        {/*
             <Grid container sx={{minHeight: "100vh"}}>
                 <Grid container md={6}>
                     <Grid container justifyContent={"center"} alignItems={"center"} sx={{height: "30vh"}}>
@@ -79,6 +81,7 @@ const Menu = () => {
                     </Grid>
                 </Grid>
             </Grid>
+    */}
     </FadeOutAnimationHandler>
     );
 }

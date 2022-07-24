@@ -1,7 +1,7 @@
-import { Container } from '@mui/system';
-import { Grid } from '@mui/material';
+//import { Container } from '@mui/system';
+//import { Grid } from '@mui/material';
 import { useState } from 'react';
-import { TextField, Button } from '@mui/material'
+//import { TextField, Button } from '@mui/material'
 import './Menu.scss';
 import anyRequest from "../../requests/anyRequest"
 import FadeOutAnimationHandler from "../templates/FadeOutAnimationHandler"
@@ -18,7 +18,8 @@ const Playground = () => {
 
   return (
     <FadeOutAnimationHandler>
-      <Container sx={{
+      playground
+      {/*<Container sx={{
         marginY: 4
       }}>
         <Grid container spacing={2}>
@@ -47,7 +48,7 @@ const Playground = () => {
             <Button variant="outlined" onClick={() => anyRequest(method, endpoint, {body: JSON.parse(body), noCredentials: true})}>Wyślij (Bez Cookies)</Button>
           </Grid>
         </Grid>      
-      </Container>
+      </Container>*/}
     </FadeOutAnimationHandler>
   );
 }
